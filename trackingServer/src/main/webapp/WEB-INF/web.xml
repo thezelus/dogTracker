@@ -6,16 +6,48 @@
          id="WebApp_ID" version="2.5">
     <display-name>Tracking Server</display-name>
 
-    <servlet>
+    <!--<servlet>
         <servlet-name>rest</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <listener>
+        <listener-class>com.dogTracker.trackingServer.config.TrackingServerContextListener</listener-class>
+    </listener>
+
+    <servlet-mapping>
+        <servlet-name>rest</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>-->
+
+    <listener>
+        <listener-class>com.dogTracker.trackingServer.config.TrackingServerContextListener</listener-class>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>com.dogTracker.trackingServer.config</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>trackingServer</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>rest</servlet-name>
+        <servlet-name>trackingServer</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
