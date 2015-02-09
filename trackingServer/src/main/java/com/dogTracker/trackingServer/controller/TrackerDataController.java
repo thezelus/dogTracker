@@ -20,7 +20,6 @@ public class TrackerDataController {
     @Autowired
     private Datasource source;
 
-
     @RequestMapping(value = "/ids", method = RequestMethod.GET)
     public ResponseEntity<List<String>> getAllTrackerIds(){
         return new ResponseEntity<List<String>>(source.getAllIds(), HttpStatus.OK);
@@ -35,7 +34,7 @@ public class TrackerDataController {
             ErrorResponse errorResponse = new ErrorResponse(ErrorResponse.INVALID_KEY,
                     "Value associated with this key is null",
                     "");
-            return new ResponseEntity<ErrorResponse>(errorResponse, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<ErrorResponse>(errorResponse, HttpStatus.GONE);
         }
     }
 

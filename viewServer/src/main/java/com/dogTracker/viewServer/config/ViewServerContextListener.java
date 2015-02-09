@@ -1,19 +1,16 @@
-package com.dogTracker.trackingServer.config;
+package com.dogTracker.viewServer.config;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class TrackingServerContextListener implements ServletContextListener {
-
-    AppInitializer initializer = new AppInitializer("trackingServer.properties");
-
+public class ViewServerContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        initializer.initializeApp();
+        AppInitializer.initializeApp("viewServer.properties");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        initializer.stopApp();
+        AppInitializer.stopApp();
     }
 }

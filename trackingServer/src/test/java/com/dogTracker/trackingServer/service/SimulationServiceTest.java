@@ -1,6 +1,7 @@
 package com.dogTracker.trackingServer.service;
 
 import com.dogTracker.model.TrackerData;
+import com.dogTracker.trackingServer.model.SimulationParameters;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -8,9 +9,13 @@ import org.junit.rules.ExpectedException;
 import java.util.concurrent.ConcurrentMap;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class SimulationServiceTest {
+
+    static SimulationService testService = new SimulationService();
+    static ConcurrentMap<String,TrackerData> staticTestDataMap = testService.generateSimulatedRFIdTracker(10);
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -33,5 +38,16 @@ public class SimulationServiceTest {
         thrown.expect(IllegalArgumentException.class);
         SimulationService testService = new SimulationService();
         testService.generateSimulatedRFIdTracker(-1);
+    }
+
+    @Test
+    public void testSimulateDataChange() throws Exception {
+
+        SimulationParameters parameters = new SimulationParameters(0,10,0,10);
+        testService.simulateDataChange(parameters, staticTestDataMap);
+
+        TrackerData actualData = staticTestDataMap.get("id2");
+        System.out.println(actualData.toString());
+
     }
 }

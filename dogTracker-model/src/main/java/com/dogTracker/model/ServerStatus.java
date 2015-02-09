@@ -7,6 +7,9 @@ public class ServerStatus {
     public String status;
     public String current;
 
+    public ServerStatus() {
+    }
+
     public String getStatus() {
         return status;
     }

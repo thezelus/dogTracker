@@ -18,6 +18,7 @@
     <modules>
         <module>dogTracker-model</module>
         <module>trackingServer</module>
+        <module>viewServer</module>
     </modules>
 
     <dependencyManagement>
@@ -87,7 +88,27 @@
                 <artifactId>mockito-core</artifactId>
                 <version>1.10.19</version>
             </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

@@ -7,6 +7,9 @@ public class TrackerData {
     public int heartRate;
     public float bodyTemperatureInFahrenheit;
 
+    public TrackerData() {
+    }
+
     public TrackerData(String id, int xCoordinate, int yCoordinate, int heartRate, float bodyTemperatureInFahrenheit) {
         this.id = id;
         this.xCoordinate = xCoordinate;

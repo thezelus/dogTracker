@@ -8,6 +8,9 @@ public class ErrorResponse {
 
     public static final String INVALID_KEY = "INVALID_KEY_VALUE";
 
+    public ErrorResponse() {
+    }
+
     public ErrorResponse(String code, String message, String description) {
         this.code = code;
         this.message = message;
