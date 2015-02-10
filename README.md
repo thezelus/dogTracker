@@ -1,6 +1,6 @@
 ##dogTracker##
 
-A web application to visualize simulated motion of trackers implanted in dog collars.
+A web application to visualize simulated motion of trackers implanted in dog collars (and get my feet wet with Spring MVC).
 
 ###Installation instructions###
 

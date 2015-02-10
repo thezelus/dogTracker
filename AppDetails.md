@@ -2,7 +2,7 @@
 - XML based deployment descriptors for supporting older versions of Servlet
 - Configurable properties for web apps (trackingServer & viewServer) can be found in classpath after the war files are deployed (/webapps/trackingServer/WEB-INF/classes)
 - Custom error responses when key is absent to differentiate between when key is absent and when the server is down
-- Fault tolerance (https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey): data in the viewServer is preserved last state if for some reason trackingServer goes down
+- Fault tolerance (https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey): data in the viewServer is preserved in its last state if for some reason trackingServer goes down
 - In-memory data source is being used to minimize dependencies
 - View server uses `/liveData` end point to get latest JSON array, this will help in future implementations for other client implementations or API extension
 
@@ -15,17 +15,17 @@
 - Canvas default size is 800px x 600px
 
 ###Todo list###
-[ ] Add more tests both unit and integration
+- [ ] Add more tests both unit and integration
 
-[ ] Use Redis as an in-memory datastore
+- [ ] Use Redis as an in-memory datastore
 
-[ ] Protocol buffers for model generation
+- [ ] Protocol buffers for model generation
 
-[ ] Re-engineer frontend to make it more responsive
+- [ ] Re-engineer frontend to make it more responsive
 
-[ ] Increase familiarity with Spring annotations
+- [ ] Increase familiarity with Spring annotations
 
-[ ] Replace random motion model with pedestrian simulation model for generation of simulation data
+- [ ] Replace random motion model with pedestrian simulation model for generation of simulation data
 
 
 ###High level application architecture###
