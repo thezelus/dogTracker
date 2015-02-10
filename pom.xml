@@ -96,7 +96,8 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
+   <!--Uncomment this when compiling for specific source and target versions
+   <build>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -110,5 +111,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+    </build>-->
 </project>
