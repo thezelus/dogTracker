@@ -22,26 +22,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry
                 .addResourceHandler("/static/**")
                 .addResourceLocations("/static/")
-                .setCachePeriod(3600)
+                .setCachePeriod(0)
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());
     }
-
-    /*
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry){
-        registry.addViewController("/").setViewName("canvas");
-    }
-
-
-    @Bean
-    public InternalResourceViewResolver getInternalResourceViewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/pages/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
-    */
 
     @Bean
     public Datasource datasource(){

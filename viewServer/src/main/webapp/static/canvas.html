@@ -24,7 +24,26 @@
         });
     }
 
-    setInterval(callAjax, 2800);
+    setInterval(callAjax, 2500);
+
+    function resize() {
+	// Our canvas must cover full height of screen
+	// regardless of the resolution
+	var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext('2d');
+	var height = window.innerHeight;
+
+	// So we need to calculate the proper scaled width
+	// that should work well with every resolution
+	var ratio = canvas.width/canvas.height;
+	var width = height * ratio;
+
+	canvas.style.width = width+'px';
+	canvas.style.height = height+'px';
+    }
+
+    window.addEventListener('load', resize, false);
+    window.addEventListener('resize', resize, false);
 
 </script>
 </head>
@@ -32,7 +51,7 @@
 
 <div id="dataDiv"></div>
 
-<canvas id="canvas" width="800px" height="600px"></canvas>
+<canvas id="canvas" width="800px" height="600px" style="border:1px solid #424242;"></canvas>
 
 </body>
 </html>
