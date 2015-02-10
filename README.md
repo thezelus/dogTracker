@@ -130,3 +130,5 @@ Screenshots of this page can be seen below -
 
 ![Screenshot1](https://github.com/thezelus/dogTracker/blob/master/images/screenshot2.png)
 
+
+**Note** - Details regarding application architecture, design decisions, assumptions and todo list can be found [here](https://github.com/thezelus/dogTracker/blob/master/AppDetails.md)

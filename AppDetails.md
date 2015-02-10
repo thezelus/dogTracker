@@ -16,10 +16,15 @@
 
 ###Todo list###
 [ ] Add more tests both unit and integration
+
 [ ] Use Redis as an in-memory datastore
+
 [ ] Protocol buffers for model generation
-[ ] Re-engineer frontend to make it more responseive
+
+[ ] Re-engineer frontend to make it more responsive
+
 [ ] Increase familiarity with Spring annotations
+
 [ ] Replace random motion model with pedestrian simulation model for generation of simulation data
 
 
