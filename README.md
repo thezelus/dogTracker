@@ -1,6 +1,6 @@
 ##dogTracker##
 
-A web application to visualize simulated motion of trackers implanted in dog collars (and get my feet wet with Spring MVC).
+A web application to visualize (*near real-time*) simulated motion of trackers implanted in dog collars (and get my feet wet with **[Spring](https://spring.io/)**).
 
 ###Installation instructions###
 
@@ -8,7 +8,9 @@ A web application to visualize simulated motion of trackers implanted in dog col
 - In the project directory run `mvn -U clean install`
 - Under `/trackingServer/target` and `/viewServer/target` corresponding war files can be found
 - Deploy those files in tomcat webapps directory to run the project
-- Properties files can be found under expanded war directories under classpath
+- Properties files can be found under expanded war directories under classpath directory
+
+(An alternative way is to directly download release files from releases page and then follow last two steps of installation instructions.)
 
 Default **trackingServer.properties** (/webapps/trackingServer/WEB-INF/classes)
 
@@ -45,7 +47,7 @@ This can be easily accomplished using some REST client like [Postman](http://www
 
 ####Status####
 
-Returns server status
+Returns server status (both for trackingServer and viewServer)
 
 - Method: `GET`
 
@@ -120,7 +122,7 @@ Returns data associated with the given tracker id in a JSON format, otherwise re
 ###View Server Canvas###
 
 View server has a dashboard that can be used to visualize the simulated motion of trackers. This can be found at
-`hostname/viewServer/canvas`
+`/viewServer/canvas`
 
 The data on this view updates every 2500 millisecond
 
@@ -148,9 +150,9 @@ Screenshots of this page can be seen below -
 - Canvas default size is 800px x 600px
 
 ###Todo list###
-- [ ] Add more tests both unit and integration
+- [ ] Add more tests, both unit and integration
 
-- [ ] Use Redis as an in-memory datastore
+- [ ] Use Redis as an in-memory data store
 
 - [ ] Protocol buffers for model generation
 
@@ -158,7 +160,7 @@ Screenshots of this page can be seen below -
 
 - [ ] Increase familiarity with Spring annotations
 
-- [ ] Replace random motion model with pedestrian simulation model for generation of simulation data
+- [ ] Replace **random motion model** with **pedestrian simulation model** for generation of simulation data
 
 
 ###High level application architecture###
