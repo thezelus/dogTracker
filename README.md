@@ -154,7 +154,7 @@ Screenshots of this page can be seen below -
 
 - [ ] Use Redis as an in-memory data store
 
-- [ ] Protocol buffers for model generation
+- [ ] Use [Protocol buffers](https://developers.google.com/protocol-buffers/) for model generation
 
 - [ ] Re-engineer frontend to make it more responsive
 
