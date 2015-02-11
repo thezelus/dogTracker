@@ -14,6 +14,9 @@ import java.util.ArrayList;
 public class UpdateDatasource implements Runnable{
 
     Datasource datasource;
+    RestClient restClient;
+
+    //RestClient will be injected using @Autowire in the next release
 
     public UpdateDatasource(Datasource datasource) {
         this.datasource = datasource;
@@ -25,7 +28,7 @@ public class UpdateDatasource implements Runnable{
     }
 
     public ArrayList<TrackerResponse> getDataFromRemoteDatasource(){
-        RestClient restClient = new RestClient(new RestTemplate(), new ObjectMapper());
+        restClient = new RestClient(new RestTemplate(), new ObjectMapper());
         ArrayList<String> ids = restClient.getIdLisFromRemoteServer();
         ArrayList<TrackerResponse> tempList = Lists.newArrayList();
         for(String id : ids){
