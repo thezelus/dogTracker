@@ -8,7 +8,7 @@ A web application to visualize (*near real-time*) simulated motion of trackers i
 - In the project directory run `mvn -U clean install`
 - Under `/trackingServer/target` and `/viewServer/target` corresponding war files can be found
 - Deploy those files in tomcat webapps directory to run the project
-- Properties files can be found under expanded war directories under classpath directory
+- Properties files can be found in expanded war directories under classpath directory
 
 (An alternative way is to directly download release files from releases page and then follow last two steps of installation instructions.)
 
@@ -150,19 +150,17 @@ Screenshots of this page can be seen below -
 - Canvas default size is 800px x 600px
 
 ###Todo list###
-- [ ] Add more tests, both unit and integration
-
+- [ ] Refactor, add more tests (both unit and integration) - *top priority*
 - [ ] Use Redis as an in-memory data store
-
 - [ ] Use [Protocol buffers](https://developers.google.com/protocol-buffers/) for model generation
-
 - [ ] Re-engineer frontend to make it more responsive
-
 - [ ] Increase familiarity with Spring annotations
-
 - [ ] Replace **random motion model** with **pedestrian simulation model** for generation of simulation data
 
 
 ###High level application architecture###
 ![Architecture](https://github.com/thezelus/dogTracker/blob/master/images/architecture.png)
 
+
+*Note* - Current release  is no where close to the quality of code that I want,
+this project is a learning exercise about how to setup and use spring and hence needs heavy refactoring.
