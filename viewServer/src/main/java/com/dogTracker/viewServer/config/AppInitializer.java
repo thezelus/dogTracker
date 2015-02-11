@@ -2,6 +2,9 @@ package com.dogTracker.viewServer.config;
 
 import com.dogTracker.viewServer.datastore.InMemoryDatasource;
 import com.dogTracker.viewServer.service.UpdateDatasource;
+import com.dogTracker.viewServer.web.RestClient;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +23,9 @@ public class AppInitializer {
     public static void initializeApp(String propertyFilename){
         appProperties = readPropertiesFile(propertyFilename);
         int interval = Integer.parseInt(appProperties.getProperty("outboundRequestIntervalInMilliseconds"));
-        scheduler.scheduleAtFixedRate(new UpdateDatasource(new InMemoryDatasource()),100,interval,TimeUnit.MILLISECONDS);
+        RestClient restClient = new RestClient(new RestTemplate(), new ObjectMapper());
+        UpdateDatasource command = new UpdateDatasource(new InMemoryDatasource(),restClient);
+        scheduler.scheduleAtFixedRate(command,100,interval,TimeUnit.MILLISECONDS);
     }
 
     public static void stopApp() {

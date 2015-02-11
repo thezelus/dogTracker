@@ -18,8 +18,9 @@ public class UpdateDatasource implements Runnable{
 
     //RestClient will be injected using @Autowire in the next release
 
-    public UpdateDatasource(Datasource datasource) {
+    public UpdateDatasource(Datasource datasource, RestClient restClient) {
         this.datasource = datasource;
+        this.restClient = restClient;
     }
 
     @Override
@@ -28,7 +29,6 @@ public class UpdateDatasource implements Runnable{
     }
 
     public ArrayList<TrackerResponse> getDataFromRemoteDatasource(){
-        restClient = new RestClient(new RestTemplate(), new ObjectMapper());
         ArrayList<String> ids = restClient.getIdLisFromRemoteServer();
         ArrayList<TrackerResponse> tempList = Lists.newArrayList();
         for(String id : ids){
